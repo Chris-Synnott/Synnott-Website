@@ -1,0 +1,62 @@
+
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* Background Images */
+.background-img{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+.largeHeight{
+    height: 600px;
+}
+
+
+
+.bk1{
+    background-image: url(./images/testPic.jpg);
+}
+
+.bk-white{
+    background-color: white;
+}
+
+.bk-green{
+    background-color: green;
+}
+
+.w100{
+    width:100%;
+}
+
+
+/* Profile - About Section */
+.profile-pic-wrapper{
+    width: 50%;
+    padding:80px 80px 0px 80px;
+    margin: 0px auto;
+}
+
+.profile-img{
+    width: 100%;
+    border-radius: 200px;
+}
+
+
+.profile-pic-text-wrapper{
+    width: 50%;
+    padding-top:10px;
+    margin: 0px auto;
+}
+
+.profile-pic-text{
+    font-size: 30px;
+    text-align: center;
+}
+
