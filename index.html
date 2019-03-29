@@ -34,9 +34,6 @@
                     <a class="nav-link" href="#">About Me</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Education</a>
-                  </li>
-                  <li class="nav-item">
                     <a class="nav-link" href="#">Projects</a>
                   </li>
                   <li class="nav-item">
@@ -51,12 +48,14 @@
       </div>
 
       <div class="row">
-          <div class="col-12 col-md-12"><h1>Chris Synnott</h1> </div>
+          <div class="col-12 col-md-12">
+                <h1>Chris Synnott</h1> 
+          </div>
         </div>
     </section>
 
       <!--2nd Section (About Me)-->
-    <section class="container-fluid background-img largeHeight bk-white">
+    <section class="container-fluid background-img mediumHeight bk-white">
         <div class="row">
             <div class="col-12 col-md-6">
               <div class="profile-pic-wrapper">
@@ -66,17 +65,100 @@
                 <h2 class="profile-pic-text">Chris Synnott</h2>
               </div>
             </div>
-            <div class="col-6 col-md-6"><h2>About Me</h2> <p>Hello! My name is Chris Synnott. I am a software engineer with secialties in web and the Salesforce Platform.</p></div>
+            <div class="col-6 col-md-6">
+                <div class="st-text-wrapper">
+              <h2>About Me</h2> <p>Hello! My name is Chris Synnott. I am a software engineer with secialties in web and the Salesforce Platform.</p></div>
+                </div>
           </div>
       </section>
 
 
-      <section class="container-fluid background-img largeHeight bk-green">
+      <section class="container-fluid background-img largeHeight bk1">
           <div class="row">
               <div class="col-12 col-md-8"><h1>Chris Synnott</h1> </div>
               <div class="col-6 col-md-4">.col-6 .col-md-4</div>
             </div>
         </section>
+
+
+        <section class="container-fluid background-img largeHeight bk-lightGrey">
+          <div class="container-fluid project-wrapper">
+            <div class="section-header-wrapper">
+              <h2>Programming Projects</h2>
+            
+              <button id="showAllProjects">all</button>
+              <button id="showAiProjects">ai</button>
+              <button id="showOsProjects">os</button>
+            </div>
+            <div id="projects" class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mobile-no-padding"> 
+                  <a href="#">
+                    <div class="card"> 
+                     <div class="card-header">
+                      <h2>The Process</h2>
+                     </div> 
+                     <div class="card-body"> 
+                       <p>project image</p>
+                     </div> 
+                     <div class="card-bottom">
+                      <a href="/s/topic/0TO1W000000MfKkWAK/solar-process" rel="noopener">View</a>
+                     </div>
+                     </div> 
+                   </a> 
+                 </div>
+
+                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mobile-no-padding"> 
+                    <a href="#">
+                      <div class="card"> 
+                       <div class="card-header">
+                        <h2>The Process</h2>
+                       </div> 
+                       <div class="card-body"> 
+                         <p>project image</p>
+                       </div> 
+                       <div class="card-bottom">
+                        <a href="/s/topic/0TO1W000000MfKkWAK/solar-process" rel="noopener">View</a>
+                       </div>
+                       </div> 
+                     </a> 
+                   </div>
+
+                   <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mobile-no-padding"> 
+                      <a href="#">
+                        <div class="card"> 
+                         <div class="card-header">
+                          <h2>The Process</h2>
+                         </div> 
+                         <div class="card-body"> 
+                           <p>project image</p>
+                         </div> 
+                         <div class="card-bottom">
+                          <a href="/s/topic/0TO1W000000MfKkWAK/solar-process" rel="noopener">View</a>
+                         </div>
+                         </div> 
+                       </a> 
+                     </div>
+
+                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mobile-no-padding"> 
+                        <a href="#">
+                          <div class="card"> 
+                           <div class="card-header">
+                            <h2>The Process</h2>
+                           </div> 
+                           <div class="card-body"> 
+                             <p>project image</p>
+                           </div> 
+                           <div class="card-bottom">
+                            <a href="/s/topic/0TO1W000000MfKkWAK/solar-process" rel="noopener">View</a>
+                           </div>
+                           </div> 
+                         </a> 
+                       </div>
+
+
+                </div>
+              </div>
+          </section>
 
         <div class="row">
           <div class="col-12 col-md-6">Bio/ Intro</div>
@@ -90,6 +172,7 @@
           <div class="col-6">.col-6</div>
         </div>
 
+    <script src="./main.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
