@@ -56,20 +56,56 @@ window.onload = (function () {
     });
 
 
+displayProjects(allArray);
+
 
 function displayProjects(array){
     console.log("Calling displayProjects")
-    topProject = `<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mobile-no-padding"><a href="#"><div class="card"> <div class="card-header"><h2>`;
-    midProject = `</h2></div><div class="card-body"><p>`
-    botProject = `</p></div> <div class="card-bottom"><a href="#" rel="noopener">View</a></div></div> </a> </div>`
+    //topProject = `<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mobile-no-padding"><a href="#"><div class="card"> <div class="card-header"><h2>`;
+    //midProject = `</h2></div><div class="card-body"><p>`
+    //botProject = `</p></div> <div class="card-bottom"><a href="#" rel="noopener">View</a></div></div> </a> </div>`
     code = ""
+    modalCode = ""
     for (i = 0; i < array.length; i++){
         console.log(array[i])
-        newProject = topProject + array[i].project_title + midProject + array[i].description + botProject;
+        //newProject = topProject + array[i].project_title + midProject + array[i].description + botProject;
+        newProject = `<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mobile-no-padding">
+        <a href="#project-${i}" data-toggle="modal" data-target="#project-${i}">
+        <div class="card"> 
+        <div class="card-header">
+        <h2> ${array[i].project_title} </h2>
+        </div><div class="card-body">
+        <p>${array[i].description} </p></div> 
+        <div class="card-bottom"><a href="#" rel="noopener">View</a></div>
+        </div> </a> </div>`
+
+        newModal = `<div class="modal fade" id="project-${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">${array[i].project_title}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            ${array[i].description} 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>`
+
+        
         code += newProject;
+        modalCode += newModal;
     }
-    document.getElementById("projects").innerHTML = ''; 
+    //document.getElementById("projects").innerHTML = ''; 
     document.getElementById("projects").innerHTML = code;
+    document.getElementById("modals-section").innerHTML = modalCode;
 }
 
 });
