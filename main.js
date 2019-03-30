@@ -1,16 +1,22 @@
 
+let firstTime = true;
 
 var obj = {
     'projects': [{
-            "project_title": "pa1",
+            "title": "2048 A.I Player",
             "type": "ai",
             "description": "pa1 description",
-            "url": "2",
+            "url": "https://www.google.com/",
         }, {
-            "project_title": "pa2",
+            "title": "pa2",
             "type": "os",
             "description": "pa2 description",
-            "url": "2"
+            "url": "https://www.google.com/"
+        },{
+            "title": "Gomoku A.I",
+            "type": "ai",
+            "description": "pa2 description",
+            "url": "https://www.google.com/"
         },
     ]
 };
@@ -73,7 +79,7 @@ function displayProjects(array){
         <a href="#project-${i}" data-toggle="modal" data-target="#project-${i}">
         <div class="card"> 
         <div class="card-header">
-        <h2> ${array[i].project_title} </h2>
+        <h2> ${array[i].title} </h2>
         </div><div class="card-body">
         <p>${array[i].description} </p></div> 
         <div class="card-bottom"><a href="#" rel="noopener">View</a></div>
@@ -83,7 +89,7 @@ function displayProjects(array){
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">${array[i].project_title}</h5>
+              <h5 class="modal-title" id="exampleModalLongTitle">${array[i].title}</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -109,3 +115,27 @@ function displayProjects(array){
 }
 
 });
+
+
+
+
+
+
+
+//scroll navbar
+window.onscroll = function() {
+    console.log("In scroll")
+    var nav = document.getElementById('nav-main');
+    if(window.pageYOffset > 5 && firstTime == true){
+        firstTime = false;
+        nav.classList.remove("hide");
+    }
+
+    if ( window.pageYOffset > 727 ) {
+        nav.classList.remove("navStylesBefore");
+        nav.classList.add("navStylesAfter");
+    } else {
+        nav.classList.remove("navStylesAfter");
+        nav.classList.add("navStylesBefore");
+    }
+}

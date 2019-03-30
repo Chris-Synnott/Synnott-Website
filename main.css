@@ -4,6 +4,16 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
+.hide{
+    display: none;
+}
+
+.top-header-text{
+    text-align: center;
+    padding: 160px;
+    font-size: 55px;
+    color: white;
+}
 
 /* Background Images */
 .background-img{
@@ -12,9 +22,17 @@ body{
     background-size: 100%;
 }
 
+.section-header-text{
+    padding: 100px 20px 20px 20px;
+    font-size: 36px;
+}
+
+.exlargeHeight{
+    height: 1050px;
+}
 
 .largeHeight{
-    height: 800px;
+    height: 777px;
 }
 
 .mediumHeight{
@@ -34,7 +52,11 @@ body{
 }
 
 .bk-green{
-    background-color: green;
+    background-color: #80DED9;
+}
+
+.bk-blue{
+    background-color:#2f3A66;
 }
 
 .bk-lightGrey{
@@ -45,21 +67,37 @@ body{
     width:100%;
 }
 
+.pos-fixed{
+    position: fixed;
+}
+
+
+/* Nav Styles */
+.onTop{
+    z-index: 9999999;
+}
+
+.navStylesBefore{
+    background-color: transparent;
+}
+.navStylesAfter{
+    background-color: white;
+    box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.4);
+}
 
 
 
 
 /* Profile - About Section */
 .st-text-wrapper{
-    width: 50%;
-    padding:80px 80px 0px 80px;
+    padding: 103px 90px 60px 0px;
     margin: 0px auto;
 }
 
 
 
 .profile-pic-wrapper{
-    width: 50%;
+    width: 53%;
     padding:80px 80px 0px 80px;
     margin: 0px auto;
 }
@@ -77,7 +115,12 @@ body{
 }
 
 .profile-pic-text{
-    font-size: 30px;
+    font-size: 36px;
+    text-align: center;
+}
+
+.profile-pic-subtext{
+    font-size: 19px;
     text-align: center;
 }
 
@@ -90,6 +133,32 @@ body{
 /* Project Cards */
 .project-wrapper{
     width:80%;
+}
+
+.filter-wrapper{
+    padding: 0px 0px 20px 0px;
+}
+
+.filterButton{
+    padding:4px 13px;
+    background-color: #f3f0f0;
+    border: .5px solid #cecdcd;
+}
+
+.filterBFirst{
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.filterBLast{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px; 
+}
+
+.filterButton:visited, .filterButton:focus, .filterButton:active {
+    text-decoration: none;
+    outline-width: 0;
+    outline: none;
 }
 
 .section-header-wrapper{
@@ -110,6 +179,10 @@ body{
     text-align: left;
     vertical-align: top;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.card:hover {
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
 }
 
 

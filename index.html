@@ -20,13 +20,13 @@
     <section class="container-fluid background-img largeHeight bk1">
       <!-- Menu -->
       <div class="row">
-          <nav class="navbar navbar-expand-lg w100">
-              <a class="navbar-brand" href="#">Navbar</a>
+          <nav id="nav-main" class="navbar navbar-expand-lg w100 pos-fixed onTop navStylesBefore hide">
+              <a class="navbar-brand" href="#">Chris Synnott</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                   </li>
@@ -49,7 +49,7 @@
 
       <div class="row">
           <div class="col-12 col-md-12">
-                <h1>Chris Synnott</h1> 
+                <h1 class="top-header-text">Chris Synnott</h1> 
           </div>
         </div>
     </section>
@@ -63,6 +63,7 @@
               </div>
               <div class="profile-pic-text-wrapper">
                 <h2 class="profile-pic-text">Chris Synnott</h2>
+                <h3 class="profile-pic-subtext">Software Developer</h3>
               </div>
             </div>
             <div class="col-6 col-md-6">
@@ -73,7 +74,7 @@
       </section>
 
 
-      <section class="container-fluid background-img largeHeight bk2">
+      <section class="container-fluid background-img largeHeight bk-green">
           <div class="row">
               <div class="col-12 col-md-8"><h1>Chris Synnott</h1> </div>
               <div class="col-6 col-md-4">.col-6 .col-md-4</div>
@@ -81,21 +82,28 @@
         </section>
 
 
+        <!-- Programming Projects-->
         <section class="container-fluid background-img largeHeight bk-lightGrey">
           <div class="container-fluid project-wrapper">
             <div class="section-header-wrapper">
-              <h2>Programming Projects</h2>
-            
-              <button id="showAllProjects">all</button>
-              <button id="showAiProjects">ai</button>
-              <button id="showOsProjects">os</button>
+              <h2 class="section-header-text">Programming Projects</h2>
+            <div class="filter-wrapper">
+              <button id="showAllProjects" class="filterButton filterBFirst">All Projects</button><button id="showWebProjects" class="filterButton">Web</button><button id="showAiProjects" class="filterButton">Artifical Intellegence</button><button id="showSalesforceProjects" class="filterButton">Salesforce</button><button id="showDataStructProjects" class="filterButton">Data Structures</button><button id="showOsProjects" class="filterButton">Operating Systems</button><button id="showOtherProjects" class="filterButton filterBLast">Other</button>
+              </div>
             </div>
             <div id="projects" class="row">
-
-              
                 </div>
               </div>
           </section>
+
+          <section class="container-fluid background-img largeHeight bk2">
+              <div class="row">
+                  <div class="col-12 col-md-8"><h1>Chris Synnott</h1> </div>
+                  <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+                </div>
+            </section>
+
+
 
         <div class="row">
           <div class="col-12 col-md-6">Bio/ Intro</div>
