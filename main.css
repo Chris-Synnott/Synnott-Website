@@ -22,6 +22,10 @@ body{
 }
 
 .bk1{
+    background-image: url(./images/testPic1.jpg);
+}
+
+.bk2{
     background-image: url(./images/testPic.jpg);
 }
 
