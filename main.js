@@ -1,64 +1,93 @@
 
 let firstTime = true;
+let currentFilterId = null;
 
 var obj = {
     'projects': [{
             "title": "2048 A.I Player",
             "type": "ai",
+            "imgSrc": "./images/cseHubEx.png",
             "description": "pa1 description",
             "url": "https://www.google.com/",
         }, {
-            "title": "pa2",
-            "type": "os",
+            "title": "CSE HUB",
+            "type": "web",
+            "imgSrc": "./images/cseHubEx.png",
             "description": "pa2 description",
-            "url": "https://www.google.com/"
+            "url": "http://csehub.xyz/"
         },{
             "title": "Gomoku A.I",
             "type": "ai",
+            "imgSrc": "./images/cseHubEx.png",
             "description": "pa2 description",
             "url": "https://www.google.com/"
         },
     ]
 };
 
+//web array
+var webArray = obj.projects.filter(function (pr) {
+    return pr.type == 'web'
+  });
+
 
 var allArray = obj.projects.filter(function (pr) {
     return obj
   });
 
-console.log("All Array:");
-console.log(allArray);
 
 var osArray = obj.projects.filter(function (pr) {
     return pr.type == 'os'
   });
 
-console.log("OS Array:");  
-console.log(osArray);
 
 var aiArray = obj.projects.filter(function (pr) {
   return pr.type == 'ai'
 });
-console.log("Ai Array:");
-console.log(aiArray);
 
 window.onload = (function () {
+    //set default filter to "All projects"
+    currentFilterId = document.getElementById("showAllProjects");
+    
+   
+    //Web Filter
+    var webFilter = document.getElementById("showWebProjects");
+    //add listener
+    webFilter.addEventListener("click",function() {
+        currentFilterId.classList.remove("currentFilter");
+        webFilter.classList.add("currentFilter");
+        currentFilterId = webFilter;
+          displayProjects(webArray)
+    });
+    
+    //A.I Fiter
     var aiFilter = document.getElementById("showAiProjects");
-    console.log(aiFilter);
+    //add listener
     aiFilter.addEventListener("click",function() {
+        currentFilterId.classList.remove("currentFilter");
+        aiFilter.classList.add("currentFilter");
+        currentFilterId = aiFilter;
           displayProjects(aiArray)
     });
 
+    //Operating Systems Filter
     var osFilter = document.getElementById("showOsProjects");
-    console.log(osFilter);
+    //add listener
     osFilter.addEventListener("click",function() {
+        currentFilterId.classList.remove("currentFilter");
+        osFilter.classList.add("currentFilter");
+        currentFilterId = osFilter;
     displayProjects(osArray)
     });
 
+    //All Filter
     var allFilter = document.getElementById("showAllProjects");
-    console.log(allFilter);
+    //add listener
     allFilter.addEventListener("click",function() {
-    displayProjects(allArray)
+        currentFilterId.classList.remove("currentFilter");
+        allFilter.classList.add("currentFilter");
+        currentFilterId = allFilter;
+        displayProjects(allArray)
     });
 
 
@@ -81,8 +110,8 @@ function displayProjects(array){
         <div class="card-header">
         <h2> ${array[i].title} </h2>
         </div><div class="card-body">
-        <p>${array[i].description} </p></div> 
-        <div class="card-bottom"><a href="#" rel="noopener">View</a></div>
+        <img class="card-img" src="${array[i].imgSrc}"></div> 
+        <div class="card-bottom"><a href="#" rel="noopener">Learn More</a></div>
         </div> </a> </div>`
 
         newModal = `<div class="modal fade" id="project-${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
