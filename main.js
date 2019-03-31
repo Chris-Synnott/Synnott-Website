@@ -1,6 +1,7 @@
 
 let firstTime = true;
 let currentFilterId = null;
+let navItems = null;
 
 var obj = {
     'projects': [{
@@ -48,7 +49,8 @@ var aiArray = obj.projects.filter(function (pr) {
 window.onload = (function () {
     //set default filter to "All projects"
     currentFilterId = document.getElementById("showAllProjects");
-    
+    navItems = document.querySelectorAll('nav-link');
+
    
     //Web Filter
     var webFilter = document.getElementById("showWebProjects");
@@ -163,8 +165,12 @@ window.onscroll = function() {
     if ( window.pageYOffset > 727 ) {
         nav.classList.remove("navStylesBefore");
         nav.classList.add("navStylesAfter");
+        nav.classList.remove("navWhite");
+        nav.classList.add("navBlue");
     } else {
         nav.classList.remove("navStylesAfter");
         nav.classList.add("navStylesBefore");
+        nav.classList.remove("navBlue");
+        nav.classList.add("navWhite");
     }
 }
