@@ -7,7 +7,7 @@ var obj = {
             "title": "2048 A.I Player",
             "type": "ai",
             "imgSrc": "./images/cseHubEx.png",
-            "imgSrcList": ["./images/cseHubEx.png","./images/cseHubEx.png","./images/cseHubEx.png"],
+            "imgSrcList": ["./images/cseHubEx.png","./images/chris-synnott-profile.jpeg","./images/testPic.jpg"],
             "description": "pa1 description",
             "url": "https://www.google.com/",
         }, {
@@ -92,9 +92,21 @@ window.onload = (function () {
         currentFilterId = allFilter;
         displayProjects(allArray)
     });
-
-
 displayProjects(allArray);
+
+
+//thumbnails projects
+document.body.addEventListener('click', function (evt) {
+  if (evt.target.classList.contains('modal-img-thumb')){
+      console.log(evt.target.src);
+      //get main modal img
+      let mainModalImg = evt.target.parentNode.parentNode.parentNode.children[0].children[0].children[0];
+      //update thumbnail image to main modal
+      mainModalImg.src = evt.target.src;
+      console.log(evt.target.parentNode.parentNode.parentNode.children[0].children[0].children[0]);
+  }
+}, false);
+
 
 
 function displayProjects(array){
