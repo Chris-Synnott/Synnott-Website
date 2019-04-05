@@ -1,25 +1,27 @@
 
 let firstTime = true;
 let currentFilterId = null;
-let navItems = null;
 
 var obj = {
     'projects': [{
             "title": "2048 A.I Player",
             "type": "ai",
             "imgSrc": "./images/cseHubEx.png",
+            "imgSrcList": ["./images/cseHubEx.png","./images/cseHubEx.png","./images/cseHubEx.png"],
             "description": "pa1 description",
             "url": "https://www.google.com/",
         }, {
             "title": "CSE HUB",
             "type": "web",
             "imgSrc": "./images/cseHubEx.png",
-            "description": "pa2 description",
+            "imgSrcList": ["./images/cseHubEx.png","./images/cseHubEx.png","./images/cseHubEx.png"],
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
             "url": "http://csehub.xyz/"
         },{
             "title": "Gomoku A.I",
             "type": "ai",
             "imgSrc": "./images/cseHubEx.png",
+            "imgSrcList": ["./images/cseHubEx.png","./images/cseHubEx.png","./images/cseHubEx.png"],
             "description": "pa2 description",
             "url": "https://www.google.com/"
         },
@@ -49,7 +51,6 @@ var aiArray = obj.projects.filter(function (pr) {
 window.onload = (function () {
     //set default filter to "All projects"
     currentFilterId = document.getElementById("showAllProjects");
-    navItems = document.querySelectorAll('nav-link');
 
    
     //Web Filter
@@ -116,27 +117,54 @@ function displayProjects(array){
         <div class="card-bottom"><a href="#" rel="noopener">Learn More</a></div>
         </div> </a> </div>`
 
-        newModal = `<div class="modal fade" id="project-${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        console.log(array[i].imgSrcList.length)
+        let thumbNailImgs = "";
+        for(j =0; j < array[i].imgSrcList.length; j++){
+            thumbNailImgs += `<img class="modal-img-thumb" src="${array[i].imgSrcList[j]}"></img>`;
+        }
+
+        newModal = `<div class="modal fade" id="project-${i}" tabindex="-1" role="dialog" aria-labelledby="${array[i].title}" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">${array[i].title}</h5>
+             
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-            ${array[i].description} 
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+            <div class="row">
+               <div class="col-7">
+
+               <div class="row">
+               <div class="col-12"><img class="modal-img" src="${array[i].imgSrc}"></div>
+               </div>
+
+               <div class="row">
+               <div class="col-12">${thumbNailImgs}</div>
+               </div>
+               
+               </div>
+               <div class="col-5">
+                   <div class="row">
+                   <div class="col-12"><h4 class="modal-title">${array[i].title}</h4></div>
+                   </div>
+
+                   <div class="row">
+                   <div class="col-12">${array[i].description}</div>
+                   </div>
+
+                   <div class="row">
+                   <div class="col-12"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div>
+                   </div>
+                   
+                </div>
+             </div>
             </div>
           </div>
         </div>
       </div>`
 
-        
         code += newProject;
         modalCode += newModal;
     }
