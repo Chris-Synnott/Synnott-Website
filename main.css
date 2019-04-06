@@ -81,7 +81,7 @@ body{
 
 /* Nav Styles */
 .onTop{
-    z-index: 9999999;
+    z-index: 9;
 }
 
 .navStylesBefore{
@@ -272,5 +272,15 @@ li.nav-item {
 .modal-img-thumb{
     width: 100px;
     height: 100px;
-    padding: 10px;
+    margin: 10px;
+    outline: 5px solid white;
+}
+
+
+.modal-active{
+    outline: 5px solid #429eff;
+}
+
+.modal-lists{
+    padding-top:10px;
 }

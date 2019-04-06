@@ -4,26 +4,35 @@ let currentFilterId = null;
 
 var obj = {
     'projects': [{
-            "title": "2048 A.I Player",
+            "title": "2048 A.I.",
             "type": "ai",
             "imgSrc": "./images/cseHubEx.png",
             "imgSrcList": ["./images/cseHubEx.png","./images/chris-synnott-profile.jpeg","./images/testPic.jpg"],
-            "description": "pa1 description",
+            "imgSrcListAttributes": ["text1","text2","text"],
+            "description": "A 2048 pygame solver, using artificial intelligence (Monte Carlo Search) and other various heuristics (weighted corners etc..). Scoring high consistently, reaching 2048 tiles often and sometimes reaching 4096 tiles.",
+            "languages": ["Python3"],
+            "topics": ["Monte Carlo Search"],
             "url": "https://www.google.com/",
         }, {
             "title": "CSE HUB",
             "type": "web",
             "imgSrc": "./images/cseHubEx.png",
             "imgSrcList": ["./images/cseHubEx.png","./images/cseHubEx.png","./images/cseHubEx.png"],
-            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-            "url": "http://csehub.xyz/"
+            "imgSrcListAttributes": ["text1","text2","text"],
+            "description": "A 2048 pygame solver, using artificial intelligence (Monte Carlo Search) and other various heuristics (weighted corners etc..). Scoring high consistently, reaching 2048 tiles often and sometimes reaching 4096 tiles.",
+            "languages": ["Python3"],
+            "topics": ["Monte Carlo Search"],
+            "url": "https://www.google.com/",
         },{
             "title": "Gomoku A.I",
             "type": "ai",
             "imgSrc": "./images/cseHubEx.png",
             "imgSrcList": ["./images/cseHubEx.png","./images/cseHubEx.png","./images/cseHubEx.png"],
-            "description": "pa2 description",
-            "url": "https://www.google.com/"
+            "imgSrcListAttributes": ["text1","text2","text"],
+            "description": "A 2048 pygame solver, using artificial intelligence (Monte Carlo Search) and other various heuristics (weighted corners etc..). Scoring high consistently, reaching 2048 tiles often and sometimes reaching 4096 tiles.",
+            "languages": ["Python3"],
+            "topics": ["Monte Carlo Search"],
+            "url": "https://www.google.com/",
         },
     ]
 };
@@ -99,6 +108,10 @@ displayProjects(allArray);
 document.body.addEventListener('click', function (evt) {
   if (evt.target.classList.contains('modal-img-thumb')){
       console.log(evt.target.src);
+      for(k = 0; k < evt.target.parentNode.children.length;k++){
+        evt.target.parentNode.children[k].classList.remove("modal-active");
+      } 
+      evt.target.classList.add("modal-active");
       //get main modal img
       let mainModalImg = evt.target.parentNode.parentNode.parentNode.children[0].children[0].children[0];
       //update thumbnail image to main modal
@@ -132,8 +145,38 @@ function displayProjects(array){
         console.log(array[i].imgSrcList.length)
         let thumbNailImgs = "";
         for(j =0; j < array[i].imgSrcList.length; j++){
+            if (j ==0){
+              thumbNailImgs += `<img class="modal-img-thumb modal-active" src="${array[i].imgSrcList[j]}"></img>`;
+            }
+            else{
             thumbNailImgs += `<img class="modal-img-thumb" src="${array[i].imgSrcList[j]}"></img>`;
+            }
         }
+
+
+        let algos = "";
+        for(j=0; j < array[i].topics.length; j++){
+            if(j == 0){
+              algos += `<div class="modal-lists">Algorithms</div><ul>`; 
+            }
+            algos += `<li>${array[i].topics[j]}</li>`
+        }
+        if(algos != ""){
+            algos += "</ul>";
+        }
+
+
+        let languagesTools = "";
+        for(j=0; j < array[i].languages.length; j++){
+            if(j == 0){
+              languagesTools += `<div class="modal-lists">Languages/Tools</div><ul>`; 
+            }
+            languagesTools += `<li>${array[i].languages[j]}</li>`
+        }
+        if(algos != ""){
+            languagesTools += "</ul>";
+        }
+
 
         newModal = `<div class="modal fade" id="project-${i}" tabindex="-1" role="dialog" aria-labelledby="${array[i].title}" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -159,7 +202,7 @@ function displayProjects(array){
                </div>
                <div class="col-5">
                    <div class="row">
-                   <div class="col-12"><h4 class="modal-title">${array[i].title}</h4></div>
+                   <div class="col-12"><h3 class="modal-title">${array[i].title}</h3></div>
                    </div>
 
                    <div class="row">
@@ -167,7 +210,12 @@ function displayProjects(array){
                    </div>
 
                    <div class="row">
-                   <div class="col-12"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div>
+                   <div class="col-6">${algos}</div>
+                   <div class="col-6">${languagesTools}</div>
+                   </div>
+
+                   <div class="row">
+                   <div class="col-12"><button type="button" class="btn btn-secondary" href="#contact" data-dismiss="modal">Contact</button></div>
                    </div>
                    
                 </div>
