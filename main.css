@@ -51,7 +51,8 @@ body{
 }
 
 .bk2{
-    background-image: url(./images/testPic.jpg);
+    /*background-image: url(./images/testPic.jpg);*/
+    background-image: url(./images/geiselv1.jpg); 
 }
 
 .bk-white{
@@ -284,3 +285,16 @@ li.nav-item {
 .modal-lists{
     padding-top:10px;
 }
+
+
+/* Contact Form */
+.form-wrapper{
+    background-color: transparent;
+    padding: 30px;
+}
+
+.form-row {
+    padding: 13px;
+    width: 100%;
+}
+
