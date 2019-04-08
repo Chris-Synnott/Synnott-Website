@@ -233,6 +233,80 @@ function displayProjects(array){
     document.getElementById("modals-section").innerHTML = modalCode;
 }
 
+
+//-------Contact Form------
+//get name input element
+var nameField = document.getElementById("validate-name");
+//add listener
+nameField.addEventListener("input",function() {
+    console.log(this.value.length);
+    if(this.value.length != 0){
+       nameField.classList.remove("is-invalid");
+       nameField.classList.add("is-valid");
+       var correctName = document.getElementById('valid-name');
+       correctName.innerHTML = this.value;
+    }
+    else{
+      nameField.classList.remove("is-valid");
+      nameField.classList.add("is-invalid"); 
+    }
+
+});
+
+
+//get email input element
+var emailField = document.getElementById("validate-email");
+//add listener
+emailField.addEventListener("input",function() {
+    console.log(this.value.length);
+    var atSymbol = this.value.includes("@");
+    var dot = this.value.includes(".");
+
+    if(this.value.length != 0 && atSymbol && dot){
+       emailField.classList.remove("is-invalid");
+       emailField.classList.add("is-valid");
+    }
+    else{
+      emailField.classList.remove("is-valid");
+      emailField.classList.add("is-invalid"); 
+    }
+});
+
+
+
+//get message title input element
+var titleField = document.getElementById("validate-title");
+//add listener
+titleField.addEventListener("input",function() {
+    console.log(this.value.length);
+    if(this.value.length != 0){
+       titleField.classList.remove("is-invalid");
+       titleField.classList.add("is-valid");
+    }
+    else{
+      titleField.classList.remove("is-valid");
+      titleField.classList.add("is-invalid"); 
+    }
+});
+
+
+//get message body input element
+var bodyField = document.getElementById("validate-body");
+//add listener
+bodyField.addEventListener("input",function() {
+    console.log(this.value.length);
+    if(this.value.length != 0){
+       bodyField.classList.remove("is-invalid");
+       bodyField.classList.add("is-valid");
+    }
+    else{
+      bodyField.classList.remove("is-valid");
+      bodyField.classList.add("is-invalid"); 
+    }
+});
+
+
+
 });
 
 

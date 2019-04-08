@@ -290,11 +290,37 @@ li.nav-item {
 /* Contact Form */
 .form-wrapper{
     background-color: transparent;
-    padding: 30px;
+    padding: 100px;
 }
 
 .form-row {
-    padding: 13px;
+    padding: 5px 20px;
+    width: 100%;
+    min-height: 70px;
+}
+
+.form-group{
+    padding: 5px 20px;
     width: 100%;
 }
 
+.form-inline label.form-label{
+    justify-content: left;
+    /* for now... */ 
+    display: none;
+}
+
+.form-control.form-input{
+    width: 100%;
+    max-width: 430px;
+}
+
+.btn.btn-primary.submit-bttn{
+    background-color: #429eff;
+    border-color: #248fff;
+    margin-top: 15px;
+}
+
+.form-control:focus{
+    border-color: #71b5ff;
+}
